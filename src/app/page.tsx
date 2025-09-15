@@ -91,7 +91,7 @@ export default function Portfolio() {
           <motion.a
             href="#projects"
             whileHover={{ scale: 1.05 }}
-            className="mt-6 px-6 py-3 bg-indigo-600 text-white rounded-2xl shadow-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition"
+            className="mt-6 px-6 py-3 text-white backdrop-blur-xl rounded-2xl shadow-lg"
           >
             View My Work
           </motion.a>
