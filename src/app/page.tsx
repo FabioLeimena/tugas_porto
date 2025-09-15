@@ -16,37 +16,49 @@ export default function Portfolio() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-900 dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-100 transition-colors">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-900 dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-100 transition-colors ">
       {/* Navbar */}
-      <nav className="flex justify-between items-center p-6 shadow-md bg-white/80 dark:bg-gray-900/80 backdrop-blur-md fixed w-full top-0 z-50 rounded-b-2xl">
-        <h1 className="text-1xl font-extrabold text-indigo-600 dark:text-indigo-400 tracking-wide">AldrinFabieyo</h1>
-        <ul className="hidden md:flex gap-8 font-medium">
-          {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
-            <li key={item}>
-              <a
-                href={`#${item.toLowerCase()}`}
-                className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                {item}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className="flex items-center gap-4 ml-6">
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition"
-          >
-            {darkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-gray-800" />}
-          </button>
+     <nav className="fixed top-0 left-0 w-full z-50 bg-white/30 dark:bg-gray-900/30 backdrop-blur-lg shadow-lg border-b border-gray-200 dark:border-gray-800">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+    {/* Logo */}
+    <a href="/" className="flex items-center gap-2">
+      <span className="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 tracking-wide">Aldrin</span>
+      <span className="hidden md:inline-block px-2 py-1 text-xs rounded bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-200 ml-2">Portfolio</span>
+    </a>
+    {/* Menu */}
+    <ul className="hidden md:flex gap-8 font-medium">
+      {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
+        <li key={item}>
           <a
-            href="/login"
-            className="px-5 py-2 rounded-xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition"
+            href={`#${item.toLowerCase()}`}
+            className="relative px-2 py-1 transition-colors duration-200 hover:text-indigo-600 dark:hover:text-indigo-400
+              after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-indigo-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
           >
-            Login
+            {item}
           </a>
-        </div>
-      </nav>
+        </li>
+      ))}
+    </ul>
+    {/* Action Buttons */}
+    <div className="flex items-center gap-2">
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition shadow"
+        title="Toggle Dark Mode"
+      >
+        {darkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-gray-800" />}
+      </button>
+      <a
+        href="/login"
+        className="px-5 py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-700 text-white font-semibold shadow hover:scale-105 transition"
+      >
+        Login
+      </a>
+    </div>
+    {/* Mobile Menu Button */}
+    {/* (Opsional: tambahkan menu hamburger di sini jika ingin menu mobile) */}
+  </div>
+</nav>
 
       {/* Hero Section */}
       <section className="relative h-screen flex flex-col justify-center items-center text-center px-4" id="hero">
